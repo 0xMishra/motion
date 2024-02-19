@@ -5,7 +5,6 @@ import { useToast } from "@/components/ui/use-toast";
 import { cn } from "@/lib/utils";
 import { Loader2 } from "lucide-react";
 import { signIn } from "next-auth/react";
-
 import { useState } from "react";
 
 export const UserAuthForm = () => {

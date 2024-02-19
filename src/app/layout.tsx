@@ -1,4 +1,3 @@
-import { Navbar } from "@/components/Navbar";
 import "@/styles/globals.css";
 
 import { Inter } from "next/font/google";
@@ -22,7 +21,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans ${inter.variable}`} suppressHydrationWarning>
-        <Navbar />
         {children}
       </body>
     </html>
