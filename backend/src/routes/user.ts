@@ -101,3 +101,18 @@ user.post(`/signin`, async (c) => {
     return c.json({ msg: `${error}` }, 500);
   }
 });
+
+user.get(`/all`, async (c) => {
+  try {
+    const prisma = new PrismaClient({
+      datasourceUrl: c.env.DATABASE_URL,
+    }).$extends(withAccelerate());
+
+    let users = await prisma.user.findMany({});
+
+    return c.json({ users: users }, 200);
+  } catch (error) {
+    console.log(error);
+    return c.json({ msg: `${error}` }, 500);
+  }
+});
